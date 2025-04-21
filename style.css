@@ -9,9 +9,9 @@ body {
         radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px), /* Bintang sedang */
         radial-gradient(white, rgba(255,255,255,.1) 0px, transparent 20px); /* Bintang kecil */
     background-size: 600px 600px, 400px 400px, 300px 300px; /* Ukuran untuk setiap lapisan bintang */
-    animation: moveStars1 20s linear infinite, /* Animasi untuk lapisan pertama */
-               moveStars2 15s linear infinite, /* Animasi untuk lapisan kedua */
-               moveStars3 10s linear infinite; /* Animasi untuk lapisan ketiga */
+    /*animation: moveStars1 20s linear infinite, */ /* Animasi untuk lapisan pertama */
+               /*moveStars2 15s linear infinite, */ /* Animasi untuk lapisan kedua */
+               /*moveStars3 10s linear infinite; */ /* Animasi untuk lapisan ketiga */
     /* ================================= */
 
     display: flex;
