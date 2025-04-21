@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraXID Project</title> <!-- Judul halaman -->
+    <!-- Menambahkan link Font Awesome (untuk icon contact jika perlu) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>CraXID Project</h1>
+        </header>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>malas mengkoding, AI saja</p> <!-- Konten About Me Producer-san -->
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>bot wa</li> <!-- Project Producer-san -->
+                <!-- Producer-san bisa tambahkan project lain di sini -->
+            </ul>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>ngoding Javascript</li> <!-- Skill Producer-san -->
+                <li>Wordpress</li> <!-- Skill Producer-san -->
+                <!-- Producer-san bisa tambahkan skill lain di sini -->
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                <!-- Link email Producer-san -->
+                <a href="mailto:dev@crax.my.id">
+                    <i class="fas fa-envelope"></i> dev@crax.my.id
+                </a>
+            </p>
+            <!-- Producer-san bisa tambahkan link contact lain di sini -->
+        </section>
+
+    </div> <!-- Penutup div container -->
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with love by CraXID Project</p>
+        <p>Copyright &copy; <span id="currentYear"></span></p> <!-- ID untuk tahun dinamis -->
+    </footer>
+
+    <script>
+        // Kode JavaScript untuk mendapatkan tahun saat ini dan mengisi footer
+        const yearSpan = document.getElementById('currentYear');
+        const currentYear = new Date().getFullYear();
+        if (yearSpan) {
+            yearSpan.textContent = currentYear;
+        }
+    </script>
+
+</body>
+</html>
