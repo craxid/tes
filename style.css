@@ -1,7 +1,14 @@
 /* Gaya Dasar untuk Body */
 body {
     font-family: sans-serif; /* Font yang mudah dibaca */
-    background-color: #f0f0f0; /* Warna latar belakang */
+    /* background-color: #f0f0f0; <-- Ini dihapus atau dikomentari ya */
+
+    /* === Gaya untuk Gradien Pelangi Bergerak === */
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Gradien pelangi */
+    background-size: 400% 400%; /* Buat ukuran background lebih besar */
+    animation: moveGradient 15s ease infinite alternate; /* Terapkan animasi */
+    /* ======================================== */
+
     display: flex;
     flex-direction: column; /* Susun elemen body secara vertikal (dari atas ke bawah) */
     align-items: center; /* Tengahkan konten horizontal di dalam body */
@@ -10,18 +17,36 @@ body {
     padding: 20px; /* Padding di sekitar konten body */
     box-sizing: border-box;
     width: 100%; /* Pastikan body mengambil lebar penuh */
+    overflow-x: hidden; /* Mencegah scrollbar horizontal muncul karena background-size besar */
 }
+
+/* === Keyframes untuk Animasi Gradien === */
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%; /* Posisi awal gradien */
+    }
+    50% {
+        background-position: 100% 50%; /* Posisi tengah gradien */
+    }
+    100% {
+        background-position: 0% 50%; /* Posisi akhir gradien (kembali ke awal) */
+    }
+}
+/* ==================================== */
+
 
 /* Gaya untuk Container Utama */
 .container {
     background-color: #fff; /* Latar belakang container putih */
     padding: 30px;
     border-radius: 10px; /* Sudut membulat */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih kuat biar terlihat di atas gradien */
     text-align: center; /* Tengahkan teks dan elemen inline di dalam container */
     max-width: 600px; /* Lebar maksimal container */
     width: 100%;
     margin-bottom: 40px; /* Jarak di bawah container sebelum footer */
+    z-index: 1; /* Pastikan container ada di atas background */
+    position: relative; /* Diperlukan untuk z-index */
 }
 
 /* Gaya untuk gambar profil */
@@ -31,7 +56,8 @@ body {
     border-radius: 50%; /* Membuat gambar menjadi bulat */
     object-fit: cover; /* Memastikan gambar tidak terdistorsi */
     margin-bottom: 20px; /* Jarak di bawah gambar */
-    border: 4px solid #ddd; /* Optional: border di sekitar gambar */
+    border: 4px solid #fff; /* Border putih di sekitar gambar biar terlihat di latar belakang */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan di gambar */
 }
 
 /* Gaya untuk Header */
@@ -96,7 +122,7 @@ section ul li:hover {
     background-color: #b3e5fc; /* Warna latar belakang saat di-hover */
 }
 
-/* Gaya untuk Link di Section (Contact) */
+/* Gaya untuk Link di Section (Contact atau Projects List) */
 section a {
     color: #007bff; /* Warna link biru */
     text-decoration: none; /* Hilangkan garis bawah */
@@ -122,6 +148,8 @@ footer {
     color: #777; /* Warna teks agak abu-abu */
     font-size: 14px; /* Ukuran font lebih kecil */
     width: 100%; /* Footer mengambil lebar penuh body */
+    z-index: 1; /* Pastikan footer ada di atas background */
+    position: relative; /* Diperlukan untuk z-index */
 }
 
 footer p {
