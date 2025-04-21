@@ -1,13 +1,18 @@
 /* Gaya Dasar untuk Body */
 body {
     font-family: sans-serif; /* Font yang mudah dibaca */
-    /* background-color: #f0f0f0; <-- Ini dihapus atau dikomentari ya */
+    background-color: #0a0a2a; /* Warna latar belakang gelap seperti angkasa */
 
-    /* === Gaya untuk Gradien Pelangi Bergerak === */
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Gradien pelangi */
-    background-size: 400% 400%; /* Buat ukuran background lebih besar */
-    animation: moveGradient 15s ease infinite alternate; /* Terapkan animasi */
-    /* ======================================== */
+    /* === Gaya untuk Bintang Bergerak === */
+    background-image:
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), /* Bintang besar */
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px), /* Bintang sedang */
+        radial-gradient(white, rgba(255,255,255,.1) 0px, transparent 20px); /* Bintang kecil */
+    background-size: 600px 600px, 400px 400px, 300px 300px; /* Ukuran untuk setiap lapisan bintang */
+    animation: moveStars1 20s linear infinite, /* Animasi untuk lapisan pertama */
+               moveStars2 15s linear infinite, /* Animasi untuk lapisan kedua */
+               moveStars3 10s linear infinite; /* Animasi untuk lapisan ketiga */
+    /* ================================= */
 
     display: flex;
     flex-direction: column; /* Susun elemen body secara vertikal (dari atas ke bawah) */
@@ -17,20 +22,23 @@ body {
     padding: 20px; /* Padding di sekitar konten body */
     box-sizing: border-box;
     width: 100%; /* Pastikan body mengambil lebar penuh */
-    overflow-x: hidden; /* Mencegah scrollbar horizontal muncul karena background-size besar */
+    overflow-x: hidden; /* Mencegah scrollbar horizontal */
 }
 
-/* === Keyframes untuk Animasi Gradien === */
-@keyframes moveGradient {
-    0% {
-        background-position: 0% 50%; /* Posisi awal gradien */
-    }
-    50% {
-        background-position: 100% 50%; /* Posisi tengah gradien */
-    }
-    100% {
-        background-position: 0% 50%; /* Posisi akhir gradien (kembali ke awal) */
-    }
+/* === Keyframes untuk Animasi Bintang === */
+@keyframes moveStars1 {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; } /* Gerak diagonal */
+}
+
+@keyframes moveStars2 {
+    from { background-position: 0 100%; }
+    to { background-position: 100% 0%; } /* Gerak diagonal terbalik */
+}
+
+@keyframes moveStars3 {
+    from { background-position: 100% 0; }
+    to { background-position: 0 100%; } /* Gerak diagonal lain */
 }
 /* ==================================== */
 
@@ -40,7 +48,7 @@ body {
     background-color: #fff; /* Latar belakang container putih */
     padding: 30px;
     border-radius: 10px; /* Sudut membulat */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih kuat biar terlihat di atas gradien */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih kuat biar terlihat di atas background */
     text-align: center; /* Tengahkan teks dan elemen inline di dalam container */
     max-width: 600px; /* Lebar maksimal container */
     width: 100%;
