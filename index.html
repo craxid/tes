@@ -29,10 +29,9 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
-            <ul>
-                <li>bot wa</li> <!-- Project Producer-san -->
-                <!-- Producer-san bisa tambahkan project lain di sini -->
-                <!-- Contoh: <li>Nama Project Lain</li> -->
+            <ul id="project-list"> <!-- ID untuk list project yang akan diisi JavaScript -->
+                <!-- Konten list project akan diisi oleh JavaScript dari GitHub -->
+                <li>Loading projects...</li> <!-- Placeholder saat loading -->
             </ul>
         </section>
 
@@ -66,12 +65,12 @@
 
     <!-- Footer -->
     <footer>
-        <p>Made with ♥️ by CraXID Project</p>
+        <p>Made with love by CraXID Project</p>
         <!-- ID untuk tahun dinamis -->
         <p>Copyright &copy; <span id="currentYear"></span></p>
     </footer>
 
-    <!-- Kode JavaScript untuk tahun dinamis -->
+    <!-- Kode JavaScript untuk tahun dinamis dan menampilkan repositori GitHub -->
     <script>
         // Kode JavaScript untuk mendapatkan tahun saat ini
         const yearSpan = document.getElementById('currentYear'); // Cari elemen dengan ID 'currentYear'
@@ -79,6 +78,56 @@
         if (yearSpan) { // Pastikan elemennya ditemukan
             yearSpan.textContent = currentYear; // Isi teks elemen dengan tahun saat ini
         }
+
+        // --- Kode JavaScript untuk menampilkan repositori GitHub ---
+
+        // Nama pengguna GitHub Producer-san
+        const githubUsername = 'craxid'; // Nama pengguna GitHub Producer-san sudah terpasang!
+        const projectList = document.getElementById('project-list'); // Cari elemen list project
+
+        // Fungsi untuk mengambil data repositori dari GitHub API
+        async function fetchGithubRepos() {
+            if (!projectList) return; // Keluar jika elemen list tidak ditemukan
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                const repos = await response.json();
+
+                // Urutkan repositori berdasarkan jumlah fork (dari yang paling banyak)
+                repos.sort((a, b) => b.forks_count - a.forks_count);
+
+                // Ambil beberapa repositori teratas (misalnya 5 teratas)
+                const topRepos = repos.slice(0, 5); // Producer-san bisa ubah angka 5 ini jika mau
+
+                // Kosongkan list yang sudah ada sebelum diisi
+                projectList.innerHTML = '';
+
+                // Tampilkan repositori di list Projects
+                if (topRepos.length === 0) {
+                    projectList.innerHTML = '<li>No public repositories found or an error occurred.</li>';
+                } else {
+                    topRepos.forEach(repo => {
+                        const listItem = document.createElement('li');
+                        // Buat link ke repositori dengan nama repositori
+                        listItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
+                        projectList.appendChild(listItem);
+                    });
+                }
+
+            } catch (error) {
+                console.error('Error fetching GitHub repos:', error);
+                if (projectList) {
+                     projectList.innerHTML = '<li>Failed to load projects. Please try again later.</li>';
+                }
+            }
+        }
+
+        // Panggil fungsi saat halaman selesai dimuat
+        fetchGithubRepos();
+
     </script>
 
 </body>
