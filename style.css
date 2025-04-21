@@ -11,6 +11,16 @@ body {
     width: 100%;
 }
 
+/* Gaya untuk gambar profil */
+.profile-image {
+    width: 120px; /* Atur lebar gambar */
+    height: 120px; /* Atur tinggi gambar */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    margin-bottom: 20px; /* Jarak di bawah gambar */
+    border: 4px solid #ddd; /* Optional: border di sekitar gambar */
+}
+
 .container {
     background-color: #fff;
     padding: 30px;
