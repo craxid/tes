@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraXID Project</title> <!-- Judul halaman -->
-    <!-- Menambahkan link Font Awesome (untuk icon contact jika perlu) -->
+    <title>CraXID Project</title> <!-- Judul halaman Producer-san -->
+    <!-- Link ke Font Awesome untuk icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link ke file CSS kita -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- Gambar Profil -->
-        <!-- Penting: Ganti 'path/to/your/image.jpg' dengan URL atau path gambar Producer-san ya! -->
+        <!-- Link gambar Producer-san sudah terpasang di sini! -->
         <img src="https://files.catbox.moe/1hwncj.jpg" alt="Gambar Profil CraXID Project" class="profile-image">
+
         <!-- Header -->
         <header>
-            <h1>CraXID Project</h1>
+            <h1>CraXID Project</h1> <!-- Nama atau Judul Producer-san -->
         </header>
 
         <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>malas mengkoding, AI saja</p> <!-- Konten About Me Producer-san -->
+            <p>malas mengkoding, AI saja</p> <!-- Cerita singkat Producer-san -->
         </section>
 
         <!-- Projects Section -->
@@ -30,6 +32,7 @@
             <ul>
                 <li>bot wa</li> <!-- Project Producer-san -->
                 <!-- Producer-san bisa tambahkan project lain di sini -->
+                <!-- Contoh: <li>Nama Project Lain</li> -->
             </ul>
         </section>
 
@@ -40,6 +43,7 @@
                 <li>ngoding Javascript</li> <!-- Skill Producer-san -->
                 <li>Wordpress</li> <!-- Skill Producer-san -->
                 <!-- Producer-san bisa tambahkan skill lain di sini -->
+                <!-- Contoh: <li>Skill Lain</li> -->
             </ul>
         </section>
 
@@ -48,27 +52,32 @@
             <h2>Contact</h2>
             <p>
                 <!-- Link email Producer-san -->
+                <!-- Penting: Ganti 'mailto:dev@crax.my.id' dengan email Producer-san ya! -->
                 <a href="mailto:dev@crax.my.id">
                     <i class="fas fa-envelope"></i> dev@crax.my.id
                 </a>
             </p>
             <!-- Producer-san bisa tambahkan link contact lain di sini -->
+            <!-- Contoh link social media (pastikan sudah ada icon di Font Awesome) -->
+            <!-- <p><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></p> -->
         </section>
 
-    </div> <!-- Penutup div container -->
+    </div> <!-- Penutup div class="container" -->
 
     <!-- Footer -->
     <footer>
-        <p>Made with love by CraXID Project</p>
-        <p>Copyright &copy; <span id="currentYear"></span></p> <!-- ID untuk tahun dinamis -->
+        <p>Made with ♥️ by CraXID Project</p>
+        <!-- ID untuk tahun dinamis -->
+        <p>Copyright &copy; <span id="currentYear"></span></p>
     </footer>
 
+    <!-- Kode JavaScript untuk tahun dinamis -->
     <script>
-        // Kode JavaScript untuk mendapatkan tahun saat ini dan mengisi footer
-        const yearSpan = document.getElementById('currentYear');
-        const currentYear = new Date().getFullYear();
-        if (yearSpan) {
-            yearSpan.textContent = currentYear;
+        // Kode JavaScript untuk mendapatkan tahun saat ini
+        const yearSpan = document.getElementById('currentYear'); // Cari elemen dengan ID 'currentYear'
+        const currentYear = new Date().getFullYear(); // Ambil tahun saat ini
+        if (yearSpan) { // Pastikan elemennya ditemukan
+            yearSpan.textContent = currentYear; // Isi teks elemen dengan tahun saat ini
         }
     </script>
 
