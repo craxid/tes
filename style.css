@@ -1,86 +1,105 @@
+/* Gaya Dasar untuk Body */
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+    font-family: sans-serif; /* Font yang mudah dibaca */
+    background-color: #f0f0f0; /* Warna latar belakang */
     display: flex;
-    flex-direction: column; /* Susun elemen body secara vertikal */
-    align-items: center; /* Tengahkan konten horizontal */
-    min-height: 100vh;
+    flex-direction: column; /* Susun elemen body secara vertikal (dari atas ke bawah) */
+    align-items: center; /* Tengahkan konten horizontal di dalam body */
+    min-height: 100vh; /* Tinggi minimal seukuran viewport */
     margin: 0;
-    padding: 20px;
+    padding: 20px; /* Padding di sekitar konten body */
     box-sizing: border-box;
+    width: 100%; /* Pastikan body mengambil lebar penuh */
+}
+
+/* Gaya untuk Container Utama */
+.container {
+    background-color: #fff; /* Latar belakang container putih */
+    padding: 30px;
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    text-align: center; /* Tengahkan teks dan elemen inline di dalam container */
+    max-width: 600px; /* Lebar maksimal container */
     width: 100%;
+    margin-bottom: 40px; /* Jarak di bawah container sebelum footer */
 }
 
 /* Gaya untuk gambar profil */
 .profile-image {
-    width: 120px; /* Atur lebar gambar */
-    height: 120px; /* Atur tinggi gambar */
+    width: 150px; /* Atur lebar gambar */
+    height: 150px; /* Atur tinggi gambar */
     border-radius: 50%; /* Membuat gambar menjadi bulat */
     object-fit: cover; /* Memastikan gambar tidak terdistorsi */
     margin-bottom: 20px; /* Jarak di bawah gambar */
     border: 4px solid #ddd; /* Optional: border di sekitar gambar */
 }
 
-.container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px; /* Lebar maksimal container sedikit lebih lebar */
-    width: 100%;
-    margin-bottom: 40px; /* Jarak di bawah container sebelum footer */
-}
-
+/* Gaya untuk Header */
 header h1 {
     color: #333;
     margin-bottom: 30px; /* Jarak di bawah header */
 }
 
+/* Gaya untuk setiap Section (About, Projects, Skills, Contact) */
 section {
     margin-bottom: 30px; /* Jarak di bawah setiap section */
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Padding di bawah konten section */
     border-bottom: 1px solid #eee; /* Garis tipis di bawah setiap section */
+    text-align: left; /* Konten section rata kiri */
 }
 
+/* Hilangkan garis di bawah section terakhir */
 section:last-child {
-    border-bottom: none; /* Hilangkan garis di bawah section terakhir (contact) */
+    border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
+/* Gaya untuk judul Section (h2) */
 section h2 {
-    color: #555;
+    color: #0056b3; /* Warna judul section jadi biru tua */
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 22px; /* Ukuran font sedikit lebih besar */
+    border-bottom: 2px solid #007bff; /* Tambahkan garis bawah biru */
+    display: inline-block; /* Buat garis bawah hanya selebar teks judul */
+    padding-bottom: 5px; /* Jarak antara teks judul dan garis bawah */
 }
 
+/* Gaya untuk paragraf di Section */
 section p {
     color: #666;
     line-height: 1.6; /* Jarak antar baris teks */
     margin-bottom: 10px;
 }
 
-/* Gaya untuk list (Projects, Skills) */
+/* Gaya untuk List (Projects, Skills) */
 section ul {
     list-style: none; /* Hilangkan bullet default */
     padding: 0;
     margin: 0;
 }
 
+/* Gaya untuk setiap Item List */
 section ul li {
-    background-color: #e9e9e9; /* Warna latar belakang item list */
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    color: #333;
+    background-color: #e1f5fe; /* Warna latar belakang item list jadi biru muda */
+    padding: 12px 18px; /* Padding sedikit lebih besar */
+    margin-bottom: 10px; /* Jarak antar item list lebih besar */
+    border-radius: 8px; /* Sudut lebih membulat */
+    color: #333; /* Warna teks tetap gelap */
+    text-align: left; /* Teks rata kiri */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08); /* Tambahkan bayangan lembut */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
 }
 
-/* Gaya untuk link contact */
+section ul li:hover {
+    background-color: #b3e5fc; /* Warna latar belakang saat di-hover */
+}
+
+/* Gaya untuk Link di Section (Contact) */
 section a {
     color: #007bff; /* Warna link biru */
-    text-decoration: none;
+    text-decoration: none; /* Hilangkan garis bawah */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -89,6 +108,7 @@ section a:hover {
     color: #0056b3; /* Warna link saat di-hover */
 }
 
+/* Gaya untuk Icon di Link */
 section a i {
     margin-right: 8px; /* Jarak antara icon dan teks link */
 }
@@ -97,14 +117,14 @@ section a i {
 /* Gaya untuk Footer */
 footer {
     margin-top: 20px; /* Jarak di atas footer */
-    text-align: center;
-    padding: 20px;
-    color: #777;
-    font-size: 14px;
+    text-align: center; /* Tengahkan teks di dalam footer */
+    padding: 20px; /* Padding di dalam footer */
+    color: #777; /* Warna teks agak abu-abu */
+    font-size: 14px; /* Ukuran font lebih kecil */
     width: 100%; /* Footer mengambil lebar penuh body */
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 5px 0; /* Tambahkan sedikit margin atas/bawah untuk jarak antar baris */
     padding: 0;
 }
